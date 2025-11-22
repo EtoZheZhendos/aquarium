@@ -23,7 +23,7 @@ public class FishTask1 extends Fish {
     @Override
     public void run() {
         running = true;
-        System.out.println(fishName + " started (Thread " + myThreadNum + ")");
+        System.out.println(fishName + " запущена (Поток " + myThreadNum + ")");
         
         while (running && food.getTotalVolume() > 0) {
             // Ждем своей очереди (взаимная блокировка)
@@ -52,7 +52,7 @@ public class FishTask1 extends Fish {
             }
         }
         
-        System.out.println(fishName + " finished");
+        System.out.println(fishName + " завершила работу");
     }
 
     public static void resetThreadNum() {

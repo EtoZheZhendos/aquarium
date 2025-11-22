@@ -23,14 +23,14 @@ public class FishTask3 extends Fish {
     @Override
     public void run() {
         running = true;
-        System.out.println(fishName + " started with Monitor");
+        System.out.println(fishName + " запущена с Монитором");
 
         while (running && food.getTotalVolume() > 0) {
             // проверяем, находится ли рыбка в зоне кормления
             if (feedingZone.isInZone(x + dx / 2, y + dy / 2)) {
                 // блокируем зону кормления (монитор)
                 synchronized (feedingZone) {
-                    System.out.println(fishName + " entered feeding zone");
+                    System.out.println(fishName + " вошла в зону кормления");
 
                     // остаемся в зоне и едим
                     while (feedingZone.isInZone(x + dx / 2, y + dy / 2) && running) {
@@ -49,7 +49,7 @@ public class FishTask3 extends Fish {
                         }
                     }
 
-                    System.out.println(fishName + " left feeding zone");
+                    System.out.println(fishName + " покинула зону кормления");
                 }
             } else {
                 // обычное движение вне зоны кормления
@@ -64,7 +64,7 @@ public class FishTask3 extends Fish {
             }
         }
 
-        System.out.println(fishName + " finished");
+        System.out.println(fishName + " завершила работу");
     }
 }
 

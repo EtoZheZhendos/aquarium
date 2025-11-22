@@ -26,7 +26,7 @@ public class FishTask2 extends Fish {
     @Override
     public void run() {
         running = true;
-        System.out.println(fishName + " started with Semaphore");
+        System.out.println(fishName + " запущена с Семафором");
 
         while (running && food.getTotalVolume() > 0) {
             try {
@@ -54,7 +54,7 @@ public class FishTask2 extends Fish {
             }
         }
 
-        System.out.println(fishName + " finished");
+        System.out.println(fishName + " завершила работу");
     }
 }
 
